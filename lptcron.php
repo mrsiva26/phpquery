@@ -23,7 +23,9 @@
 	#if date_diff is 2, make today as yesterday & current as today
 	if(date_diff($yesterdaydate, new DateTime() )->d == 2){
 		$todaycount = (int) file_get_contents('/var/www/html/phpquery/today');
+
 		$todaystate = $todaycount > $yesterdaycount+0;
+
 		$today = $yesterdaydate->add(new DateInterval('P1D'))->format('Y-m-d');
 		file_put_contents ( '/var/www/html/phpquery/yesterday' , $todaycount.' # '.$todaystate.' # '.$today );
 	}

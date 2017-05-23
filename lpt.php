@@ -12,7 +12,9 @@
 	
 	#get todays count and state
 	$todaycount = (int) file_get_contents('today');
+
 	$todaystate = $todaycount > $yesterdaycount+0;
+
 	#echo $todaycount.' # '.$todaystate.'<br>';
 	
 	#print correspoding output
